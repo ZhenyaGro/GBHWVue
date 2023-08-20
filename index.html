@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GBHWVue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <button v-on:click="reverseText" class="button-reverse">{{ buttonText }}</button>
+    <button v-on:click="addNewElement" class="button-reverse">Добавить новый элемент</button>
+    <ul class="ul">
+      <li class="li" v-for="(item, index) in list" v-on:click="removeElement(index)">{{ item
+        }}</li>
+    </ul>
+  </div>
+  <script src="seminar1.js"></script>
+</body>
+
+</html>
