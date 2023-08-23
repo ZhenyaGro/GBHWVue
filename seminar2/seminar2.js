@@ -26,9 +26,6 @@ new Vue({
       }
     ]
   },
-  computed: {
-
-  },
   methods: {
     changeArrow() {
       this.currentArrow = this.arrowCodes[this.isAsc ? 0 : 1];
