@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GBHWVue</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
 
 </head>
@@ -12,17 +13,19 @@
 <body>
   <div id="app">
     <div class="products">
-      <h3 class="products__heading">Product list</h1>
-        <button class="products__button" @click="makeSort(true)">Sort ASC ^
-        </button>
-        <button class="products__button" @click="makeSort(false)">Sort DESC v</button>
-        <ul class="products__list">
-          <li class="products__item" v-for="(product, index) in products" :key="product.name">{{ `Name: ${product.name}
-            Price:
-            ${product.price}`
-            }}</li>
-        </ul>
+      <ul class="products__list">
+        <li class="products__column-heading">
+          <button class="products__column-name">Name</button>
+          <button class="products__column-name hasSort" @click="makeSort(isAsc = !isAsc)">Price {{ currentArrow
+            }}</button>
+        </li>
+        <li class="products__product" v-for="product in products" :key="product.name">
+          <span class="products__name">{{ product.name }}</span>
+          <span class="product__price">&#8381;{{ product.price }}</span>
+        </li>
+      </ul>
     </div>
+
   </div>
   <script src="seminar2.js"></script>
 </body>

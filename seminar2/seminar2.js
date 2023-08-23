@@ -4,6 +4,9 @@
 new Vue({
   el: '#app',
   data: {
+    isAsc: false,
+    arrowCodes: ['\u{2191}', '\u{2193}'],
+    currentArrow: '',
     products: [
       {
         name: 'Fish',
@@ -27,8 +30,12 @@ new Vue({
 
   },
   methods: {
+    changeArrow() {
+      this.currentArrow = this.arrowCodes[this.isAsc ? 0 : 1];
+    },
     makeSort(isAsc) {
       this.products.sort((product1, product2) => isAsc ? product1.price - product2.price : product2.price - product1.price);
+      this.changeArrow();
     }
   },
 });
