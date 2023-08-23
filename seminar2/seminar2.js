@@ -6,15 +6,29 @@ new Vue({
   data: {
     products: [
       {
-        name: '',
-        price: ''
+        name: 'Fish',
+        price: 200
+      },
+      {
+        name: 'Tea',
+        price: 300
+      },
+      {
+        name: 'Chocolate',
+        price: 100
+      },
+      {
+        name: 'Water',
+        price: 70
       }
     ]
-
   },
   computed: {
 
   },
   methods: {
+    makeSort(isAsc) {
+      this.products.sort((product1, product2) => isAsc ? product1.price - product2.price : product2.price - product1.price);
+    }
   },
 });

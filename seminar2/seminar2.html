@@ -11,6 +11,18 @@
 
 <body>
   <div id="app">
+    <div class="products">
+      <h3 class="products__heading">Product list</h1>
+        <button class="products__button" @click="makeSort(true)">Sort ASC ^
+        </button>
+        <button class="products__button" @click="makeSort(false)">Sort DESC v</button>
+        <ul class="products__list">
+          <li class="products__item" v-for="(product, index) in products" :key="product.name">{{ `Name: ${product.name}
+            Price:
+            ${product.price}`
+            }}</li>
+        </ul>
+    </div>
   </div>
   <script src="seminar2.js"></script>
 </body>
