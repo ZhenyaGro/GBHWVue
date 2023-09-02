@@ -42,6 +42,7 @@ export default {
   width: fit-content;
   border: 3px solid black;
   padding: 30px;
+  border-radius: 20px;
 }
 
 ul {
